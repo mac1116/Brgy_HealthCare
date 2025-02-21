@@ -3,33 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <form action="#">
-        <div class="container">
-            <div class="welcome-container">
-                <label class="welcome">Welcome to Health Care</label>
-            </div>
-            
-            <div class="login-container">
+    <Form>
+        <div class="main_div">
+            <div class="first_div">
+                <label class="sign_in_lbl">Sign in</label><br>
+                <input type="text" name="username" id="username" placeholder="Username" required> <br>
+                <input type="text" name="password" id="pasword" placeholder="Password" required> <br>
+                <button type="submit" class="sign_in_bttn" >
+                        Sign in
+                </button>
 
-                <label class="login">Login Page</label>
-
-                <input type="text" id="username" name="login" placeholder="Username" required> <br>
-
-                <input type="text" id="password" name="login" placeholder="Password" required>
-
-                <input type="submit" value="SUBMIT">
-                
-                <a href="#"> Create Account</a>
-
+                <span class="circle"></span>
+                <p class="plbl">Don't have any account yet?</p>
+                <button class="create_acc">Create Account</button>
             </div>
 
         </div>
-    </form>
-    
+    </Form>
 </body>
 </html>
