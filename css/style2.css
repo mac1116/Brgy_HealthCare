@@ -153,12 +153,42 @@ section{
 
 .main-container{
     width: 100%;
-    height: 100%;
+    height: 90vh;
     display: flex;
     margin-left: 90px;
     margin-top:-50px ;
     align-items: center;
 }
+
+.signin-container{
+    width: 70vh;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column  ;
+    margin-top: 50vh;
+    margin-right: 20vh;
+}
+
+
+.signin-container h6{
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+
+}
+
+.signin-container h1{
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    margin-top: -20px;
+
+}
+
 
 .main-container img{
     margin-top: 70px;
@@ -179,7 +209,6 @@ section{
 
 
 .signin {
-    margin-top: 100px;
     background-color:transparent; /* Semi-transparent white */
     backdrop-filter: blur(20px); /* Blur effect */
     border-radius: 20px;
