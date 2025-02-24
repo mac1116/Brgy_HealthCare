@@ -1,35 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+<?php
+session_start();
+include 'db_connect.php'; 
 
-</head>
-<body>
-    <form action="#">
-        <div class="container">
-            <div class="welcome-container">
-                <label class="welcome">Welcome to Health Care</label>
-            </div>
-            
-            <div class="login-container">
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']); 
 
-                <label class="login">Login Page</label>
+    if (empty($username) || empty($password)) {
+        $_SESSION['error'] = "All fields are required!";
+        header("Location: loginpage.php");
+        exit();
+    }
 
-                <input type="text" id="username" name="login" placeholder="Username" required> <br>
+    $stmt = $conn->prepare("SELECT * FROM login_system WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 
-                <input type="text" id="password" name="login" placeholder="Password" required>
 
-                <input type="submit" value="SUBMIT">
-                
-                <a href="#"> Create Account</a>
+    if ($user && $password === $user['password']) {
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['full_name'] = $user['full_name'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['created_at'] = $user['created_at'];
 
-            </div>
-
-        </div>
-    </form>
-    
-</body>
-</html>
+        if ($user['role'] == 'admin') {
+            header("Location: admin_dashboard.php");
+        } else {
+            header("Location: user_dashboard.php");
+        }
+        exit(); 
+    } else {
+        $_SESSION['error'] = "Invalid credentials!";
+        header("Location: loginpage.php");
+        exit();
+    }
+}
+?>
