@@ -1,64 +1,86 @@
 @import url();
 
 *{
-    padding:0;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     box-sizing: border-box;
 }
 
-html{
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 }
 
-body{
+
+
+header{
+    width: 100%;
+    height: 80px;
+    top: 0; left:0; right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(/assets/header.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0.1px 0.4rem;
+    z-index: 1000;
+
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+    padding: 0;
+    margin: 0;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    width: 110%;
+    height: 100vh;
+    margin-left: -20px;
     background-image: url('../assets/bg2.png'); /* Path to your image */
     background-size: cover; /* Covers the full screen */
     background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents repeating */
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-   
-}
-
-nav{
-    width: 100%;
-    height: 10vh;
-    position: sticky;
-
+    background-repeat: no-repeat; 
 
 }
-
-.nav-container{
+.main-container{
     width: 100%;
-    height: 100%;
+    height: 90vh;
     display: flex;
-    margin-right: 150px;
-    justify-content: space-around;
+    margin-left: 100px;
+    margin-top:50px ;
     align-items: center;
-    margin-top: 20px;
 }
-
 .logo {
     color: white;
     font-weight: bolder;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: -10px;
-    margin-left: -230px;
+    margin-top: -20px;
+    margin-left: 40px;
 }
 
 .logo-text {
     display: flex;
-    flex-direction: column; /* Stacks BRGY and HEALTHCARE vertically */
-    line-height: 0.4; /* Adjust spacing between lines */
+    flex-direction: column; 
+    line-height: 0.4; 
     
 }
 
 .logo .brgy {
     font-size: 13px; /* Adjust as needed */
     margin-top: 19px;
+    font-weight: 400;
 }
 
 .logo .hc {
@@ -87,12 +109,19 @@ nav{
 
 }
 
-.nav-container .links{
-    
+.nav-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-container .links{  
     display: flex;
+    flex-direction: row;
     gap: 3rem;
     align-items: center;
-    margin-right: -200px;
+    margin-left: 500px;
+    margin-top: 10px;
 
 }
 
@@ -101,7 +130,7 @@ nav{
     font-size: 1rem;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-weight: 100;
+    font-weight: 300;
     transform: 0.2s linear;
 
 }
@@ -123,7 +152,7 @@ nav{
     
 }
 
-.nav-container .contact-btn {
+.nav-container .signin-btn {
     background-color: transparent;
     padding: 5px 20px;
     border-radius: 20px;
@@ -131,12 +160,12 @@ nav{
     transition: 0.1s linear;
 }
 
-.nav-container .contact-btn a {
+.nav-container .signin-btn a {
     color: rgb(255, 255, 255);
     transition: 0.01s linear;
 }
 
-.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a {
+.nav-container .signin-btn:hover, .nav-container .signin-btn:hover a {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     
@@ -146,33 +175,144 @@ nav{
     color: rgb(255, 255, 255);
 }
 
-section{
-    width: 100%;
-    height: 90vh;
-}
-.signin{
-    display: flex;
+.heading{
+    text-align: center;
+    font-size: 3rem;
+    color: black;
+    margin: 0;
 }
 
-.main-container{
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    margin-left: 90px;
-    margin-top:-50px ;
-    align-items: center;
+.heading span{
+    color: #0d3b12;
 }
+
+.about{
+    background-image: url('../assets/bg3.PNG'); /* Path to your image */
+    background-size: cover; /* Covers the full screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */ 
+    padding: 0;
+    position: relative;
+}
+
+.about h1{
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+
+.head-container{
+    position: absolute; /* Position the container absolutely */
+    top: 50px; 
+    left: 0; 
+    width: 100%; 
+    text-align: center;
+}
+
+.about h3{
+    text-align: left;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures content is justified */
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    flex-direction: row;
+}
+
+.about .row .img-container {
+    flex: 1 1 30%;
+    position: relative;
+}
+
+.about .row .img-container img {
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    margin-left: 100px;
+    box-shadow: 0 0.1px 0.4rem black;
+}
+
+
+.about .row .content {
+    flex: 1 1 60%;
+    margin-left: 80px;
+}
+
+.about .row .content p {
+    text-align: justify; 
+    margin-right: 100px;
+
+}
+
+.footer{
+    height:fit-content ;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.footer .box-container .box{
+    flex: 1 1 10rem;
+   
+}
+
+.footer .box-container .box h3{
+    color: #333;
+    font-size: 20px;
+    margin-left: 3.5rem;
+}
+
+.footer .box-container .box a{
+    display: block;
+    color: #666;
+    font-size: 15px;
+    padding: .7rem 3.5rem;
+    text-decoration: none;
+}
+.footer .box-container .box a:hover{
+    color: #0d3b12;
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #333;
+    border-top: .1rem solid #161616;
+    margin: 0;
+}
+
+.footer .credit span{
+    color: #0d3b12;
+    font-weight: 500;
+    margin: 0;
+
+}
+
 
 .signin-container{
     width: 70vh;
     height: 90vh;
-    display: flex;
+    display: none;
+    position: absolute;
     align-items: center;
-    flex-direction: column  ;
-    margin-top: 54vh;
-    margin-right: 20vh;
+    justify-content: center;
+    left: 65%;
+    top: 35%;
+    transition: 0.5s linear fade-in;
 }
-
 
 .signin-container h6{
     align-items: center;
@@ -180,7 +320,8 @@ section{
     font-weight: 400;
     font-size: 15px;
     margin-top: -30px;
-    margin-bottom: 10px;
+    margin-left: 100px;
+    margin-bottom:15px;
 
 }
 
@@ -189,12 +330,12 @@ section{
     color: white;
     font-size: 30px;
     margin-top: -20px;
+    margin-left: 120px;
 
 }
 
 
 .main-container img{
-    margin-top: 70px;
     margin-bottom: 10px;
     width: 19%;
 
@@ -297,7 +438,7 @@ section{
 
 }
 
-@media (max-width:884px) {
+/* @media (max-width:884px) {
     body{
         overflow-y: visible;
     }
@@ -354,4 +495,4 @@ section{
     }
 
     
-}
+} */

@@ -15,25 +15,29 @@ include "login.php";
         <link rel="stylesheet" href="../css/style2.css">
     </head>
     <body>
-        
-        <nav>
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="../assets/logo.png" alt="logo" style="width: 70px; height: auto; margin-top: 20px;">
-                    <div class="logo-text">
-                        <p class="brgy">BARANGAY DIMAGIBA</p> 
-                        <p class="hc">HEALTHCARE</p>
+            <header>
+                <div class="nav-container">
+                    <div class="logo">
+                        <img src="../assets/logo.png" alt="logo" style="width: 55px; height: auto; margin-top: 20px;">
+                        <div class="logo-text">
+                            <p class="brgy">BARANGAY DIMAGIBA</p> 
+                            <p class="hc">HEALTHCARE</p>
+                        </div>
                     </div>
+
+                    <nav>
+                    <div class="links">
+                    <div class="link"> <a href="#" id="nav-home">Home</a></div>
+                    <div class="link"> <a href="#" id="nav-about">About Us</a></div>
+                    <div class="link"> <a href="#" id="nav-contact">Contact</a></div>
+                    <div class="link signin-btn"> <a href="#" id="nav-signin">Sign in</a></div>
+                    </div>
+                    </nav>
+
                 </div>
-                <div class="links">
-                <div class="link"> <a href="#">Home</a></div>
-                <div class="link"> <a href="#">About Us</a></div>
-                <div class="link contact-btn"> <a href="#">Sign in</a></div>
-            </div>
+            </header>
 
-            </div>
-
-            <section>
+            <section class="home" id="home">
                 <div class="main-container">
                     <div class="content">
                         <img src="../assets/logo.png" alt="logo"> <br> 
@@ -41,10 +45,10 @@ include "login.php";
                         <b class="b1">Barangay Dimagiba</b> <br>
                         <b class="b2">Healthcare Center</b>
                         <div class="btn">
-                            <button>Sign In</button>
+                            <button id="about-btn">About Us</button>
                         </div>
                     </div>  
-                        <div class="signin-container">
+                        <div class="signin-container" id="signin">
                             <h1>SIGN IN</h1>
                             <h6>Enter Account Details</h6>
                                 <div class="signin">
@@ -57,6 +61,63 @@ include "login.php";
                         </div>
                 </div>
             </section>
-        </nav>
+
+            <section class="about" id="about">
+                <div class="head-container">
+                <h1 class="heading"> <span>About</span> Us</h1>
+
+                <div class="row">
+                    <div class="img-container">
+                        <img src="../assets/pic.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>How it was started?</h3>
+                        <p>Barangay Dimagiba Health Care Center, located in Barangay Dimagiba, City of Yuem, 
+                            is dedicated to providing accessible and quality healthcare to the community. Our health workers offers 
+                            medical consultations, immunizations, maternal care, and health education to promote overall 
+                            well-being. Committed to serving with compassion, we strive to ensure a healthier and safer 
+                            Barangay Dimagiba.
+                        </p>
+
+                        <p>Together, let's build a stronger, healthier Barangay Dimagiba! </p>
+                    </div>
+
+                    </div>
+                </div>
+                
+                
+            </section>
+
+            <section class="footer" id="contact">
+                <div class="box-container">
+
+                    <div class="box">
+                        <h3>Quick links</h3>
+                        <a href="#" id="footer-home"> Home</a>
+                        <a href="#" id="footer-about"> About Us</a>
+                        <a href="#" id="footer-contact"> Contact</a>
+                        <a href="#" id="footer-signin"> Sign In</a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Location</h3>
+                        <a href="#"> Barangay Dimagiba, City of Yuem <br> <br>Philippines, 8000</a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Contact Us</h3>
+                        <a href="#"> 09123456789</a>
+                        <a href="#">barangaydimagiba@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="credit"> Created by: <span> Unsagane Group</span> | All Rights Reserved</div>
+            </section>
+
+            
+            <script src="../js/script.js"></script>
+           
+            
     </body>
 </html>
