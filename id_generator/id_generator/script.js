@@ -17,6 +17,7 @@ badgeForm.addEventListener('submit', function(event){
     const formContainer = document.getElementById('formContainer');
     formContainer.style.display = 'none';
 
+    const id = 'ID ' + Math.floor(Math.random() * 100).toString().padStart(4, '0');
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('lastname').value;
     const middlename = document.getElementById('middlename').value;
@@ -25,12 +26,10 @@ badgeForm.addEventListener('submit', function(event){
     const gender = document.getElementById('gender').value;
     const nationality = document.getElementById('nationality').value;
     const civilstatus = document.getElementById('civilstatus').value;
+    const pob = document.getElementById('pob').value;
     const emergencyname = document.getElementById('emergencyname').value;
     const emergencycontact = document.getElementById('emergencycontact').value;
-    const pob = document.getElementById('pob').value;
     const picture = document.getElementById('picture').files[0];
-
-    const id = 'ID ' + Math.floor(Math.random() * 100).toString().padStart(4, '0');
 
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -41,7 +40,7 @@ badgeForm.addEventListener('submit', function(event){
                 <p id="badgeFirstName">${firstname}</p>
                 <p id="badgeMiddleName">${middlename}</p>
                 <p id="badgeDOB">${dob} <p id="badgeId">${id}</p></p>
-                <p id="badgeAddress">Address: ${address}</p>
+                <p id="badgeAddress"> ${address}</p>
                 <img src="${pictureUrl}" class="badge-picture" alt="Picture">
             </div>
         `);
@@ -58,17 +57,20 @@ badgeForm.addEventListener('submit', function(event){
         `);
 
         $('#qrcode').empty();
-        $('#qrcode2').empty();
+        $('#qrcode-back').empty();
 
-        const qrText = `ID: ${id}\nFirst Name: ${firstname}\nMiddle Name: ${middlename}\nLast Name: ${lastname}\nDOB: ${dob}\nAddress: ${address}\nGender: ${gender}\nNationality: ${nationality}\nCivil Status: ${civilstatus}\nEmergency Contact: ${emergencyname}, ${emergencycontact}`;
+        const baseUrl = 'http://192.168.1.99/BRGY%20HEALTH%20CENTER/id_generator/display.html'; // Replace with your actual IP address
+        const qrText = `${baseUrl}?id=${encodeURIComponent(id)}&firstname=${encodeURIComponent(firstname)}&lastname=${encodeURIComponent(lastname)}&dob=${encodeURIComponent(dob)}&address=${encodeURIComponent(address)}&gender=${encodeURIComponent(gender)}&nationality=${encodeURIComponent(nationality)}&civilstatus=${encodeURIComponent(civilstatus)}&emergencyname=${encodeURIComponent(emergencyname)}&emergencycontact=${encodeURIComponent(emergencycontact)}`;
 
-        $('#qrcode').qrcode({
+        console.log("QR Text:", qrText); // Debugging line to check the qrText value
+
+        $('#qrcode').empty().qrcode({
             text: qrText,
             width: 128,
             height: 128
         });
 
-        $('#qrcode2').qrcode({
+        $('#qrcode-back').empty().qrcode({
             text: qrText,
             width: 220,
             height: 220
