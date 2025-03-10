@@ -1,0 +1,155 @@
+/* HEADERS  */
+
+.custom-div {
+    margin-top: 1.2rem !important;
+    justify-content: center !important;
+}
+
+/* .custom-div .right-div {
+    align-self: center !important;
+    background-color: white !important;
+    border-radius: 0.7rem !important;
+} */
+
+.custom-status .nav-link {
+    justify-content: center !important;
+    align-self: center !important;
+    color: #D9D9D9 !important;
+    font-size: smaller !important;
+    font-weight: 550 !important;
+    background-color: white !important;
+}
+
+.custom-status .nav-link .active {
+    color: #00441B !important;
+}
+
+.custom-status .nav-link:hover {
+    color: black !important;
+}
+
+.custom-controls {
+    color: #00441B !important;
+}
+
+.custom-controls select {
+    color: #00441B !important;
+}
+
+.custom-controls .btn {
+    background-color: #00441B !important;
+    color: white !important;
+}
+
+/* TABLES */
+
+/* Table Font Styling */
+#userTable {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+    /* Default font color */
+}
+
+/* Table Header */
+/* #userTable thead {
+    background-color: #F5F5F5;
+    color: 00441B;
+    font-weight: bold; 
+    } */
+/* Make header bold */
+
+#userTable thead th {
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    color: #00441B !important;
+}
+
+/* Table Body */
+#userTable tbody td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    /* Control text weight */
+    color: #444;
+    /* Slightly darker text for contrast */
+}
+
+/* Hover effect */
+#userTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* DataTables Pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 6px 12px;
+    background-color: transparent !important;
+    color: white !important;
+    border-radius: 5px;
+    margin: 2px;
+    font-weight: 650 !important;
+    font-size: 1.2rem !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #0056b3;
+}
+
+/* Active Page */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #00441B !important;
+    color: white !important;
+    font-size: 1rem !important;
+}
+
+/* Search Bar */
+/* .dataTables_filter input {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+} */
+
+
+.dataTables_info {
+    font-size: 1.2rem !important;
+    /* Adjust text size */
+    font-weight: 650 !important;
+    /* Make it bold */
+    color: #00441B !important;
+    /* Change text color (blue) */
+    text-align: center;
+    /* Center align */
+}
+
+
+/* Table Length Dropdown */
+.dataTables_length label {
+    color: #00441B !important;
+    font-size: 1.2rem !important;
+    font-weight: 650 !important;
+}
+
+.dataTables_length select {
+    border: 1px solid #00441B !important;
+    border-radius: 5px !important;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 0.4rem !important;
+}
+
+
+/* NOTIFICATION WILL NOT BE BEHIND THE ACTIVE SIDEBAR */
+#notification-alert {
+    font-size: 1rem !important;
+    z-index: 9999;
+    /* Ensures it's above most elements */
+    position: fixed;
+    /* Keeps it visible */
+    top: 2rem;
+    /* Adjust based on your layout */
+    right: 2rem;
+    width: 73%;
+}
