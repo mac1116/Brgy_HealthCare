@@ -118,8 +118,8 @@ select:focus{
     width: 120px;
     height: 120px;
     object-fit: cover;
-    margin-top: -180px;
-    margin-left: -160px;
+    margin-top: -176px;
+    margin-left: -158px;
 }
 
 .badge-header h1{
@@ -149,13 +149,13 @@ select:focus{
     margin: 0;
 }
 .badge-qr{
-    margin-top: -158px;
+    margin-top: -157px;
     margin-left: 340px;
 }
 
-#qrcode2{
-    margin-top: -270px;
-    margin-left: 218px;
+#qrcode-back{
+    margin-top: -286px;
+    margin-left: 246px;
 }
 
 #badgeDesignation{ 
@@ -174,12 +174,12 @@ select:focus{
 }
 
 #badgeFirstName{
-    margin-top: 15px;
+    margin-top: 13px;
 }
 
 #badgeId{
     margin-left: 210px;
-    margin-top: -25px;
+    margin-top: -27px;
 }
 
 #badgeMiddleName{
@@ -201,7 +201,7 @@ select:focus{
     justify-content: center;
     flex-direction: column;
     align-items: start;
-    margin-top: 12px;
+    margin-top: 8px;
     margin-left: 7px;
 }
 
@@ -215,7 +215,7 @@ select:focus{
 }
 
 #badgeNat{
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 #badgeCs{
@@ -235,7 +235,7 @@ select:focus{
 }
 
 #badgeId2{
-    margin-top: -16px;
+    margin-top: -19px;
     margin-left: 300px;
 }
 
